@@ -12,7 +12,7 @@ export default class Song {
 
     get Template() {
         return /*html*/ `
-    <div class="card rounded shadow my-2">
+    <div class="card rounded shadow my-2 scrollable-y">
         <img src="${this.albumArt}" class="card-img-top" alt="album art">
         <div class="d-flex justify-content-between card-body">
             <h5 class="card-title">${this.title}</h5>
@@ -26,7 +26,7 @@ export default class Song {
 
     get playlistTemplate() {
         return /*html*/ `
-          <div class="card rounded shadow my-2">
+          <div class="card rounded shadow my-2 scrollable-y">
               <div onclick="app.audioController.togglePlay('${this.id}')" class="card-body d-flex justify-content-between">
               <audio src="${this.preview}" type="audio/mp3" id="${this.id}"></audio>
                   <h5 class="card-title selectable">${this.title}</h5>
