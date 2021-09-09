@@ -27,11 +27,13 @@ export default class Song {
     get playlistTemplate() {
         return /*html*/ `
           <div class="card rounded shadow my-2">
-              <div class="card-body d-flex justify-content-between">
-                  <h5 class="card-title">${this.title}</h5>
+              <div onclick="app.audioController.togglePlay('${this.id}')" class="card-body d-flex justify-content-between">
+              <audio src="${this.preview}" type="audio/mp3" id="${this.id}"></audio>
+                  <h5 class="card-title selectable">${this.title}</h5>
+              
                   <h6>${this.artist}</h6>
                   <p>${this.album}</p>
-                  <a onclick="app.songsController.removeSong(${this.id})" class="btn btn-danger">Delete</a>
+                  <button onclick="app.songsController.removeSong('${this.id}')" class="btn btn-danger">Delete</button>
               </div>
           </div>
         `;

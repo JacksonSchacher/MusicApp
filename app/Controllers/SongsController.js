@@ -57,7 +57,7 @@ export default class SongsController {
         try {
             await songService.removeSong(id)
         } catch (error) {
-            console.error(error)
+            console.error("REMOVE SONG CONTROLLER", error)
         }
     }
 }
